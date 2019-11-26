@@ -6,5 +6,6 @@
         <Label x:Name="current" Text="Current"/>
         <Button x:Name="left" Text="Left" Clicked="LeftClicked"/>
         <Button x:Name="right" Text="Right" Clicked="RightClicked"/>
+        <Button x:Name="reset" Text="Reset" Clicked="ResetClicked"/>
     </StackLayout>
 </ContentPage>

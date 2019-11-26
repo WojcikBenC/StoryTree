@@ -26,7 +26,9 @@ namespace StoryTree
             if(StoryTree.Tree.cursor.left != null) StoryTree.Tree.cursor = StoryTree.Tree.cursor.left;
             current.Text = StoryTree.Tree.cursor.current;
             if(StoryTree.Tree.cursor.left != null) left.Text = StoryTree.Tree.cursor.left.choice;
-            if(StoryTree.Tree.cursor.right != null) right.Text = StoryTree.Tree.cursor.right.choice;
+            else left.Text = "-";
+            if (StoryTree.Tree.cursor.right != null) right.Text = StoryTree.Tree.cursor.right.choice;
+            else right.Text = "-";
         }
 
         void RightClicked(object sender, EventArgs e)
@@ -34,7 +36,17 @@ namespace StoryTree
             if (StoryTree.Tree.cursor.right != null) StoryTree.Tree.cursor = StoryTree.Tree.cursor.right;
             current.Text = StoryTree.Tree.cursor.current;
             if (StoryTree.Tree.cursor.left != null) left.Text = StoryTree.Tree.cursor.left.choice;
+            else left.Text = "-";
             if (StoryTree.Tree.cursor.right != null) right.Text = StoryTree.Tree.cursor.right.choice;
+            else right.Text = "-";
+        }
+
+        void ResetClicked(object sender, EventArgs e)
+        {
+            StoryTree.Tree.cursor = StoryTree.Tree.getRoot();
+            current.Text = StoryTree.Tree.cursor.current;
+            left.Text = StoryTree.Tree.cursor.left.choice;
+            right.Text = StoryTree.Tree.cursor.right.choice;
         }
     }
 }
